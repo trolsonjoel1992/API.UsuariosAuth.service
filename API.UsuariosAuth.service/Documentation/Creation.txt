@@ -1,0 +1,30 @@
+# Documentación de Creación y Configuración del Proyecto
+
+## 1. Configuración inicial del proyecto
+- Se crea un proyecto Minimal API en .NET 9, orientado a la gestión de usuarios y autenticación.
+
+## 2. Integración de Auth0 para autenticación
+- Se crea una aplicación en Auth0 y se obtienen las credenciales necesarias: Domain, ClientId, ClientSecret y Audience.
+- Se agregan estos valores al archivo `appsettings.json` para su uso en la configuración de autenticación.
+- En `Program.cs` se configura la autenticación JWT usando Auth0, especificando el dominio y el audience correspondiente.
+- Se habilita el middleware de autenticación y autorización en la aplicación.
+
+## 3. Limpieza de endpoints de ejemplo
+- Se eliminó el endpoint `/weatherforecast` y el modelo asociado para dejar la API lista para endpoints propios de usuarios y autenticación.
+
+## 4. Creación del modelo de usuario
+- Se crea el archivo `Entities/User.cs` con la clase `User`, que incluye:
+  - `Id`: Identificador único.
+  - `Email`: Correo electrónico único.
+  - `PasswordHash`: Hash de la contraseña.
+  - `Name`: Nombre del usuario.
+  - `CreatedAt` y `UpdatedAt`: Fechas de auditoría. (sugerida por la IA de turno)
+
+
+
+## 5. Próximos pasos 
+- Implementar endpoints para registro, login y gestión de perfil de usuario.
+- Definir la lógica de almacenamiento de usuarios (base de datos o en memoria).
+- Agregar validaciones y pruebas de los endpoints.
+
+---
